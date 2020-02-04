@@ -1,6 +1,6 @@
-EasyDict==1.7
-opencv-python==3.4.1.15
-shapely==1.6.4
+EasyDict
+opencv-python
+shapely
 Cython
 scipy
 pandas
@@ -11,3 +11,4 @@ yacs>=0.1.5
 tensorboardX>=1.6
 tqdm
 ninja
+https://download.pytorch.org/whl/cu100/torch-1.1.0-cp37-cp37m-win_amd64.whl

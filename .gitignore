@@ -1,0 +1,7 @@
+__pycache__/
+venv/
+.idea/
+models_data/hrnet_w48_cityscapes_cls19_1024x2048_trainset.pth
+output/
+log/
+data/test/
