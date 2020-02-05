@@ -28,7 +28,8 @@ def reduce_tensor(inp):
     Reduce the loss from all processes so that 
     process with rank 0 has the averaged results.
     """
-    world_size = get_world_size()
+    # world_size = get_world_size()
+    world_size = 1
     if world_size < 2:
         return inp
     with torch.no_grad():
@@ -47,8 +48,10 @@ def train(config, epoch, num_epoch, epoch_iters, base_lr, num_iters,
     cur_iters = epoch * epoch_iters
     writer = writer_dict['writer']
     global_steps = writer_dict['train_global_steps']
-    rank = get_rank()
-    world_size = get_world_size()
+    # rank = get_rank()
+    rank = 0
+    # world_size = get_world_size()
+    world_size = 1
 
     for i_iter, batch in enumerate(trainloader):
         images, labels, _, _ = batch
@@ -89,8 +92,10 @@ def train(config, epoch, num_epoch, epoch_iters, base_lr, num_iters,
 
 
 def validate(config, testloader, model, writer_dict, device):
-    rank = get_rank()
-    world_size = get_world_size()
+    # rank = get_rank()
+    rank = 0
+    # world_size = get_world_size()
+    world_size = 1
     model.eval()
     ave_loss = AverageMeter()
     confusion_matrix = np.zeros(
